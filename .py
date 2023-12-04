@@ -94,22 +94,22 @@ def checkWinner():
         disableButtons()
         return 0 
 
-ul = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(ul))
-um = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(um))
-ur = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(ur))
-ml = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(ml))
-mm = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(mm))
-mr = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(mr))
-bl = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(bl))
-bm = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(bm))
-br = Button(myWindow, text="", width=6, height=3, font=('Helvica',24), command=lambda:btnClick(br))
+ul = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(ul))
+um = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(um))
+ur = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(ur))
+ml = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(ml))
+mm = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(mm))
+mr = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(mr))
+bl = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(bl))
+bm = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(bm))
+br = Button(myWindow, text="", width=6, height=3, font=('Helvica 24 bold'), command=lambda:btnClick(br))
 
 major=Menu(myWindow)
 myWindow.config(menu=major)
 
 options=Menu(major, tearoff=False)
 major.add_cascade(label="Options", menu=options)
-options.add_command(label="Play again", command=reset)
+options.add_command(label="Play again", command=reset, count = 0)
 options.add_command(label="Close", command=myWindow.quit)
 
 
@@ -123,5 +123,15 @@ mr.grid(column = 1, row = 2)
 bl.grid(column = 2, row = 0)
 bm.grid(column = 2, row = 1)
 br.grid(column = 2, row = 2)
+
+ul.config(bd=8, bg = "#F4C2C2")
+um.config(bd=8, bg = "#FFE0E0")
+ur.config(bd=8, bg = "#F4C2C2")
+ml.config(bd=8, bg = "#FFE0E0")
+mm.config(bd=8, bg = "#F4C2C2")
+mr.config(bd=8, bg = "#FFE0E0")
+bl.config(bd=8, bg = "#F4C2C2")
+bm.config(bd=8, bg = "#FFE0E0")
+br.config(bd=8, bg = "#F4C2C2")
 
 myWindow.mainloop()
