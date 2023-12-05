@@ -1,3 +1,6 @@
+from cProfile import label
+from cgitb import text
+from pickle import GLOBAL
 from tkinter import*
 from tkinter import messagebox
 
@@ -21,6 +24,8 @@ def disableButtons():
     return 0
 
 def reset():
+    global count
+    count = 0
     ul.config(state=NORMAL)
     um.config(state=NORMAL)
     ur.config(state=NORMAL)
@@ -44,7 +49,21 @@ def reset():
 
 def infoWindow():
     newWindow=Toplevel()
-    newWindow
+    newWindow.title('Info')
+    newWindow.geometry('1015x200')
+    description=Label(newWindow, text="Rules", font = "Helvica 24 bold")
+    description.grid(row = 0, column = 0)
+    description=Label(newWindow, text = "The object of Tic Tac Toe is to get three in a row", font = "Helvica 14")
+    description.grid(row=1, column = 0)
+    description=Label(newWindow, text = "You play on a three by three game board", font = "Helvica 14")
+    description.grid(row = 2, column = 0)
+    description=Label(newWindow, text = "The first player is known as X and the second is O", font = "Helvica 14")
+    description.grid(row=3, column=0)
+    description=Label(newWindow, text="Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled", font = "Helvica 14")
+    description.grid(row = 4, column = 0)
+    description=Label(newWindow, text = "X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game", font = "Helvica 14")
+    description.grid(row=5, column =0)
+    return 0
 
 def btnClick(button):
     global playerX, count
@@ -109,8 +128,13 @@ myWindow.config(menu=major)
 
 options=Menu(major, tearoff=False)
 major.add_cascade(label="Options", menu=options)
-options.add_command(label="Play again", command=reset, count = 0)
+options.add_command(label="Play again", command=reset)
 options.add_command(label="Close", command=myWindow.quit)
+major.add_command(label="About",command=infoWindow)
+
+
+
+
 
 
 
