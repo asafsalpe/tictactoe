@@ -49,8 +49,9 @@ def reset():
 
 def infoWindow():
     newWindow=Toplevel()
-    newWindow.title('Info')
+    newWindow.title('Rules')
     newWindow.geometry('1015x200')
+    newWindow.config(bg = "#FFE0E0")
     description=Label(newWindow, text="Rules", font = "Helvica 24 bold")
     description.grid(row = 0, column = 0)
     description=Label(newWindow, text = "The object of Tic Tac Toe is to get three in a row", font = "Helvica 14")
@@ -130,7 +131,7 @@ options=Menu(major, tearoff=False)
 major.add_cascade(label="Options", menu=options)
 options.add_command(label="Play again", command=reset)
 options.add_command(label="Close", command=myWindow.quit)
-major.add_command(label="About",command=infoWindow)
+major.add_command(label="Rules",command=infoWindow)
 
 
 
