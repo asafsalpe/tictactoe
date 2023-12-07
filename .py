@@ -24,8 +24,9 @@ def disableButtons():
     return 0
 
 def reset():
-    global count
+    global count, playerX
     count = 0
+    playerX= True
     ul.config(state=NORMAL)
     um.config(state=NORMAL)
     ur.config(state=NORMAL)
@@ -83,7 +84,7 @@ def btnClick(button):
     return 0
 
 def checkWinner():
-    global winner
+    global winner 
     winner=False
     if (ul["text"]=='X' and um["text"]=='X'and ur["text"]=='X'or
         ml["text"]=='X' and mm["text"]=='X'and mr["text"]=='X'or
